@@ -7,7 +7,9 @@ import 'dotenv/config';
 
 useWebSocketImplementation(WebSocket);
 
+console.log("Start");
 const sk = process.env.SK_HEX;
+console.log(sk);
 
 const pool = new SimplePool();
 
