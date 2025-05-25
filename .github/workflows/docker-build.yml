@@ -5,10 +5,8 @@ on:
     branches: [ "master" ]
 
 env:
-  # Configuration du registre Docker (GitHub Container Registry)
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  # Tag avec le SHA du commit pour une référence précise
   IMAGE_TAG: ${{ github.sha }}
 
 jobs:
@@ -46,10 +44,6 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: |
-            SK_HEX=${{ secrets.SK_HEX }}
-          secrets: |
-            SK_HEX=${{ secrets.SK_HEX }}
 
       - name: Output image info
         run: |
