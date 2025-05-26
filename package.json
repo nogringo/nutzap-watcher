@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@cashu/cashu-ts": "^2.5.2",
     "dotenv": "^16.5.0",
     "nostr-tools": "^2.13.0",
     "ws": "^8.18.2"
