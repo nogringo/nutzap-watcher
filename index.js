@@ -16,8 +16,7 @@ pool.subscribe(
     relays,
     {
         kinds: [9321],
-        since: Math.floor(Date.now() / 1000) - 12 * 3600,
-        limit: 1,
+        since: Math.floor(Date.now() / 1000),
     },
     {
         async onevent(event) {
@@ -36,8 +35,6 @@ pool.subscribe(
 
             const signedNotificationEvent = finalizeEvent(notificationEvent, sk);
             await Promise.allSettled(pool.publish(relays, signedNotificationEvent));
-
-            console.log(signedNotificationEvent)
         }
     }
 );
