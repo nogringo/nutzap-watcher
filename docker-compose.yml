@@ -2,3 +2,6 @@ services:
   app:
     image: ghcr.io/nogringo/nutzap-watcher:master
     restart: unless-stopped
+    environment:
+      SK_HEX: ${SK_HEX}
+      
