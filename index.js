@@ -30,7 +30,7 @@ pool.subscribe(
                 kind: 1,
                 created_at: Math.floor(Date.now() / 1000),
                 tags: [["p", recipient]],
-                content: `nostr:${nip19.npubEncode(recipient)} received a Nutzap of ${amount} sat${amount > 1 ? "s" : ""} from nostr:${nip19.npubEncode(event.pubkey)} whith note: ${event.content}\n\n${token}`,
+                content: `nostr:${nip19.npubEncode(recipient)} received a Nutzap of ${amount} sat${amount > 1 ? "s" : ""} from nostr:${nip19.npubEncode(event.pubkey)}${event.content == "" ? "" : " whith note: " + event.content}\n\n${token}`,
             }
 
             const signedNotificationEvent = finalizeEvent(notificationEvent, sk);
